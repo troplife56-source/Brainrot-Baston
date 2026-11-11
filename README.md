@@ -42,4 +42,4 @@ Le jeu envoie quelques événements pour savoir ce qui plaît : `play` (type de 
 
 Tout le jeu tient dans `index.html` (HTML, CSS et JavaScript sans dépendance à installer). `manifest.webmanifest` et les icônes permettent de l'ajouter à l'écran d'accueil, et `preview.png` est l'image affichée quand on partage le lien. Le mode en ligne utilise [PeerJS](https://peerjs.com/) : les appareils se connectent directement entre eux en WebRTC, sans serveur à gérer. Sur certains réseaux très verrouillés (wifi d'école ou d'entreprise), la connexion peut échouer.
 
-Pour changer le lien de la chaîne YouTube affiché dans le jeu, modifie la constante `CHANNEL_URL` en haut du script.
+Chaîne YouTube : https://www.youtube.com/channel/UCUxAoAoIPwp0w2XtL8-iJ9w (constante `CHANNEL_URL` en haut du script). Le bouton de l'accueil ouvre directement la demande d'abonnement, celui de l'écran de fin ouvre les Shorts.

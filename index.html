@@ -278,7 +278,7 @@ body.touchui #home{padding-block:2px}
       <button class="modebtn" id="homeTrain">🎯 Entraînement<small>mannequin</small></button>
     </div>
     <div class="homefoot">
-      <a class="yt" id="ytHome" href="#" target="_blank" rel="noopener">▶ Les vidéos sur YouTube</a>
+      <a class="yt" id="ytHome" href="https://www.youtube.com/channel/UCUxAoAoIPwp0w2XtL8-iJ9w?sub_confirmation=1" target="_blank" rel="noopener">▶ S'abonner à la chaîne</a>
       <button class="mini" id="shareHome">📤 Partager le jeu</button>
     </div>
   </section>
@@ -390,7 +390,7 @@ body.touchui #home{padding-block:2px}
           <div class="endlinks">
             <button class="mini" id="menuBtn">Changer de perso</button>
             <button class="mini" id="overShare">📤 Défier un ami</button>
-            <a class="yt" id="overYt" href="#" target="_blank" rel="noopener">▶ Les vidéos</a>
+            <a class="yt" id="overYt" href="https://www.youtube.com/channel/UCUxAoAoIPwp0w2XtL8-iJ9w/shorts" target="_blank" rel="noopener">▶ Les vidéos</a>
           </div>
         </div>
       </div>
@@ -428,7 +428,8 @@ const TAUNTS = ["TROPPO LENTO!","CIAO CIAO!","SEI UNA LASAGNA!","CHE SCARSO!","V
 const TYPES = ["baguette","poisson","chaise","pizza","piment","enclume","seed","toast","olive","flake"];
 const STATES = ["lobby","countdown","play","roundEnd","matchEnd"];
 const GAME_URL = "https://troplife56-source.github.io/Brainrot-Baston/";
-const CHANNEL_URL = "https://www.youtube.com/results?search_query=Les+Brainrots+de+San+Carbonara";
+const CHANNEL_URL = "https://www.youtube.com/channel/UCUxAoAoIPwp0w2XtL8-iJ9w";
+const SUB_URL = CHANNEL_URL + "?sub_confirmation=1";   // opens YouTube's "S'abonner ?" prompt
 function track(name, params){ try { if (typeof window.gtag === "function") window.gtag("event", name, params || {}); } catch(e){} }
 
 const CONTROLS = [
@@ -2578,7 +2579,7 @@ $("partyBtn").onclick = () => { run = {kind:"party"}; slotCfg[0].char = myChar; 
 $("onlineBtn").onclick = () => { run = {kind:"online"}; showLobby(); showOnlineTab(); track("open_online"); };
 $("homeTrain").onclick = () => { slotCfg[0].char = myChar; startTraining("home"); };
 $("backHome").onclick = () => { if (nr) leaveRoom(); showHome(); };
-for (const [id, from] of [["ytHome","home"], ["overYt","end"]]){ const a = $(id); a.href = CHANNEL_URL; a.addEventListener("click", () => track("channel_click", {from})); }
+for (const [id, from, url] of [["ytHome","home",SUB_URL], ["overYt","end",CHANNEL_URL + "/shorts"]]){ const a = $(id); a.href = url; a.addEventListener("click", () => track("channel_click", {from})); }
 function toast(msg){ const t = $("toast"); t.textContent = msg; t.hidden = false; clearTimeout(toast.tm); toast.tm = setTimeout(() => { t.hidden = true; }, 2800); }
 function shareGame(text, from){
   track("share", {from});
