@@ -200,6 +200,8 @@ body.ended .pad, body.ended .gamebar{display:none!important}
 .btn.play{font-size:clamp(24px,7vw,32px); padding:16px 20px; border-radius:16px; box-shadow:0 6px 0 #8f2216; animation:breathe 1.8s ease-in-out infinite}
 .btn.play:disabled{animation:none}
 @keyframes breathe{50%{transform:scale(1.025)}}
+/* Bouton JOUER toujours visible sur mobile (collé en bas de l'écran) */
+@media (max-width:640px){ #home .btn.play{position:sticky; bottom:max(10px, env(safe-area-inset-bottom,0px)); z-index:5} }
 .hstats{margin:0; text-align:center; color:var(--muted); font-weight:900; font-size:13px}
 .daily{display:flex; gap:12px; align-items:center; background:linear-gradient(135deg,#3a2a12,#2b1d19); border:2px solid var(--gold); border-radius:16px; padding:10px 12px}
 .dtext{display:flex; flex-direction:column; gap:2px; flex:1; min-width:0}
